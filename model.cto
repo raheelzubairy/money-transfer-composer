@@ -1,0 +1,18 @@
+/**
+* Sample business network definition.
+*/
+namespace org.acme.sample
+asset account identified by accountId {
+    o String accountId
+    -->customer owner
+    o Double balance
+}
+participant customer identified by customerId {
+    o String customerId
+    o String firstname
+}
+transaction transfermoney  {
+    -->account from
+    -->account to
+    o Double amount
+}
